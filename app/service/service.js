@@ -9,15 +9,19 @@ class Content{
                  await  DyubeiDao.create(v)
                  break
              case 200:
-                 await  DjbDao.create(v)
+                 await DjbDao.create(v)
                  break
              case 300:
                  break
              default:
                  throw  new BookNotFound({
-                     msg:'不存在'
+                     msg: '不存在'
                  })
          }
+    }
+
+    static async editContent(id, p) {
+
     }
 
 }
