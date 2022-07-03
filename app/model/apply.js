@@ -1,8 +1,11 @@
-import { config } from 'lin-mizar';
-import { Model, Sequelize } from 'sequelize';
+import {config} from 'lin-mizar';
+import {Model, Sequelize} from 'sequelize';
 import sequelize from '../lib/db';
-class Djb extends Model {}
-Djb.init(
+
+class Dapply extends Model {
+}
+
+Dapply.init(
     {
         id: {
             type: Sequelize.INTEGER,
@@ -53,7 +56,7 @@ Djb.init(
         },
         image: {
             type: Sequelize.STRING(64),
-            get () {
+            get() {
                 const image = this.getDataValue('image');
                 return config.getItem('localMainImgUrlPrefix') + image;
             }
@@ -65,11 +68,11 @@ Djb.init(
     {
         // 定义表名
 
-        tableName: 'djb02',
+        tableName: 'djbapply',
 
         // 定义模型名称
 
-        modelName: 'djb02',
+        modelName: 'djbapply',
 
         // 启用软删除
 
@@ -90,4 +93,4 @@ Djb.init(
         sequelize
     }
 );
-export { Djb as DangjianModel };
+export {Dapply as DapplyModel};
